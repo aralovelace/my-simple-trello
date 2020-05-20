@@ -76,7 +76,6 @@ class Task extends Component {
               </MDBModal>
               <div className="d-flex justify-content-between">
                   <div className="d-flex align-items-start flex-column">
-                      <div className="flex-row mb-2">{labels}</div>
                       <div className="d-flex justify-content-start">
                           <div className="align-self-center">
                               <MDBIcon
@@ -98,8 +97,9 @@ class Task extends Component {
                       />
                   </div>
               </div>
-          <p className="mb-1">{this.props.task.details}</p>
-              {dueDate}
+              <p className="mb-1">{this.props.task.details}</p>
+              <p className="mb-1">{dueDate}</p>
+              <div className="flex-row mb-2">{labels}</div>
           </MDBListGroupItem>
       );
     }

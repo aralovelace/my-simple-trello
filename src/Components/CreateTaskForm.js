@@ -3,7 +3,7 @@ import Datetime from "react-datetime";
 import "../DatetimePicker.css";
 import tasksStore from "../Stores/TasksStore";
 import { observer} from "mobx-react";
-import {MDBBtn, MDBInput, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader} from "mdbreact";
+import {MDBBtn, MDBInput, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBRow} from "mdbreact";
 import Select from "react-select";
 
 class CreateTaskForm extends Component {
@@ -48,7 +48,7 @@ class CreateTaskForm extends Component {
       });
 
     return (
-        <div>
+        <MDBRow>
             <MDBBtn outline color="primary" onClick={this.toggleModal.bind(this)}>
                New Task
             </MDBBtn>
@@ -96,7 +96,7 @@ class CreateTaskForm extends Component {
                     </MDBBtn>
                 </MDBModalFooter>
             </MDBModal>
-        </div>
+        </MDBRow>
       );
 
   }

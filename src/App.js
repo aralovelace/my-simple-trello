@@ -4,21 +4,9 @@ import FutureList from "./Components/FutureList";
 import CreateTaskForm from "./Components/CreateTaskForm";
 import tasksStore from "./Stores/TasksStore";
 import moment from "moment";
-import { MDBContainer } from "mdbreact";
+import {MDBContainer, MDBRow} from "mdbreact";
 
 class App extends Component {
-  state = {
-    todayTasks: [
-      {
-        title: "Eat a banana",
-        details: "Find a banana. Eat it.",
-        due: moment()
-      }
-    ],
-    futureTasks: []
-  }
-
-
 
   componentDidMount() {
     tasksStore.retrieveFromLocalStorage();
@@ -29,8 +17,10 @@ class App extends Component {
   
     return (<MDBContainer>
         <CreateTaskForm />
-        <TodayList/>
-        <FutureList/>
+        <MDBRow>
+            <FutureList/>
+            <TodayList/>
+        </MDBRow>
       </MDBContainer>
     );
 }
