@@ -1,9 +1,10 @@
 {
   "name": "my-simple-trello",
-  "homepage" : "http://trello.aralovelace.dec",
+  "homepage": "https://github.com/aralovelace/my-simple-trello",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "levenary": "^1.1.1",
     "mdbreact": "^4.26.1",
     "mobx": "^5.15.4",
@@ -16,7 +17,9 @@
     "react-select": "^3.1.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
