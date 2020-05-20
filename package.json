@@ -1,6 +1,6 @@
 {
   "name": "my-simple-trello",
-  "homepage": "http://trello.aralovelace.dev",
+  "homepage": "https://aralovelace.github.io/my-simple-trello/",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
