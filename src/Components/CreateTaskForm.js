@@ -4,20 +4,26 @@ import "../DatetimePicker.css";
 import tasksStore from "../Stores/TasksStore";
 import { observer} from "mobx-react";
 import {MDBBtn, MDBInput, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader} from "mdbreact";
-
+import Select from "react-select";
 
 class CreateTaskForm extends Component {
   state = {
     title: "",
     details: "",
     due: "",
+    labels: [],
     modal: false
   };
 
   addTask = () => {
     if (this.state.title) {
-      tasksStore.addTask(this.state.title, this.state.details, this.state.due);
-      this.setState({ title: "", details: "", due:"" });
+      tasksStore.addTask(
+          this.state.title,
+          this.state.details,
+          this.state.due,
+          this.state.labels
+      );
+      this.setState({ title: "", details: "", due:"", labels:[] });
       this.toggleModal();
     }
   };
@@ -31,8 +37,16 @@ class CreateTaskForm extends Component {
     this.toggleModal();
   };
 
+  labelSelect = (value, action) => {
+      this.setState({labels: value});
+  }
+
 
   render() {
+      let options = tasksStore.labelOptions.map(label => {
+          return { value: label, label:label };
+      });
+
     return (
         <div>
             <MDBBtn outline color="primary" onClick={this.toggleModal.bind(this)}>
@@ -58,6 +72,12 @@ class CreateTaskForm extends Component {
                         label="Details (Optional)"
                         value={this.state.details}
                         onChange={e =>  this.setState({ details: e.target.value }) }
+                    />
+                    <Select
+                        options={options}
+                        isMulti
+                        value={this.state.labels}
+                        onChange={this.labelSelect.bind(this)}
                     />
                     <Datetime
                         defaultValue="Optional Due Date"

@@ -8,7 +8,8 @@ import {
     MDBModal,
     MDBModalBody,
     MDBModalFooter,
-    MDBModalHeader
+    MDBModalHeader,
+    MDBBadge
 } from "mdbreact";
 import tasksStore from "../Stores/TasksStore";
 
@@ -31,8 +32,20 @@ class Task extends Component {
         tasksStore.checkTask(this.props.task.id);
     }
 
-render() {
-      let dueDate;
+    render() {
+        let labels;
+        if (this.props.task.labels && this.props.task.labels.length > 0) {
+            labels = this.props.task.labels.map(label => {
+                return (
+                    <MDBBadge pill color="primary" className="mr-2">
+                        {label.label}
+                    </MDBBadge>
+
+                );
+            });
+        }
+
+        let dueDate;
       if (this.props.task.due)
           dueDate = <span>- {this.props.task.due.fromNow()}</span>;
       return (
@@ -51,7 +64,7 @@ render() {
                   tag="p"
                   toggle={this.toggleDeleteModal.bind(this)}
                   >
-                      Are you sure?
+                  Are you sure?
                   </MDBModalHeader>
                   <MDBModalBody className="text-center">
                       <MDBIcon icon="times" size="4x" pull className="animated data" />
@@ -63,7 +76,7 @@ render() {
               </MDBModal>
               <div className="d-flex justify-content-between">
                   <div className="d-flex align-items-start flex-column">
-
+                      <div className="flex-row mb-2">{labels}</div>
                       <div className="d-flex justify-content-start">
                           <div className="align-self-center">
                               <MDBIcon
@@ -89,8 +102,7 @@ render() {
               {dueDate}
           </MDBListGroupItem>
       );
-  }
-
+    }
 }
 
 export default observer(Task);

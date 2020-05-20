@@ -4,25 +4,20 @@ import moment from "moment";
 
 class TasksStore {
 
-    idCounter = 2;
-    pendingTasks = [
-        {
-            title: "Eat a banana",
-            details: "Find a banana. Eat it.",
-            due: moment(),
-            id: 1
-        },
-    ];
+    idCounter = 1;
+    labelOptions = ["New Feature", "Defect","Invalid","Emergency Repair"];
+    pendingTasks = [];
     todayTasks = [];
     futureTasks = [];
     doneTasks = [];
 
 
-    addTask = (title, details, due) => {
+    addTask = (title, details, due,labels) => {
         let newTask = {
             title: title,
             details: details,
             due: due,
+            labels: labels,
             id: this.idCounter
         };
         this.idCounter++;
@@ -63,6 +58,7 @@ class TasksStore {
             futureTasks: this.futureTasks,
             pendingTasks: this.pendingTasks,
             done: this.doneTasks,
+            labels: this.labelOptions,
             idCounter: this.idCounter
         });
         localStorage.setItem("tasks",tasks);
@@ -87,6 +83,7 @@ class TasksStore {
             this.futureTasks = tasks.futureTasks;
             this.pendingTasks = tasks.pendingTasks;
             this.doneTasks = tasks.done;
+            this.labelOptions = tasks.labels;
             this.idCounter = tasks.idCounter;
         }
     };
