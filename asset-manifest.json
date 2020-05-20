@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/aralovelace/my-simple-trello/static/css/main.e0b9f7b8.chunk.css",
+    "main.js": "/aralovelace/my-simple-trello/static/js/main.c263cfaf.chunk.js",
+    "main.js.map": "/aralovelace/my-simple-trello/static/js/main.c263cfaf.chunk.js.map",
+    "runtime~main.js": "/aralovelace/my-simple-trello/static/js/runtime~main.e9897725.js",
+    "runtime~main.js.map": "/aralovelace/my-simple-trello/static/js/runtime~main.e9897725.js.map",
+    "static/css/2.3601d281.chunk.css": "/aralovelace/my-simple-trello/static/css/2.3601d281.chunk.css",
+    "static/js/2.31f47e70.chunk.js": "/aralovelace/my-simple-trello/static/js/2.31f47e70.chunk.js",
+    "static/js/2.31f47e70.chunk.js.map": "/aralovelace/my-simple-trello/static/js/2.31f47e70.chunk.js.map",
+    "index.html": "/aralovelace/my-simple-trello/index.html",
+    "precache-manifest.ec9bee041382ab4268039e91188fceed.js": "/aralovelace/my-simple-trello/precache-manifest.ec9bee041382ab4268039e91188fceed.js",
+    "service-worker.js": "/aralovelace/my-simple-trello/service-worker.js",
+    "static/css/2.3601d281.chunk.css.map": "/aralovelace/my-simple-trello/static/css/2.3601d281.chunk.css.map",
+    "static/css/main.e0b9f7b8.chunk.css.map": "/aralovelace/my-simple-trello/static/css/main.e0b9f7b8.chunk.css.map",
+    "static/media/mdb.css": "/aralovelace/my-simple-trello/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/aralovelace/my-simple-trello/static/media/fa-solid-900.ec763292.svg"
+  }
+}
