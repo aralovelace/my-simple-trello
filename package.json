@@ -1,5 +1,6 @@
 {
-  "name": "popotheoworker-starter-code",
+  "name": "my-simple-trello",
+  "homepage" : "http://trello.aralovelace.dec",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
