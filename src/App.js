@@ -4,6 +4,7 @@ import FutureList from "./Components/FutureList";
 import CreateTaskForm from "./Components/CreateTaskForm";
 import tasksStore from "./Stores/TasksStore";
 import {MDBContainer, MDBRow} from "mdbreact";
+import CompletedList from "./Components/CompletedList";
 
 class App extends Component {
 
@@ -17,8 +18,10 @@ class App extends Component {
     return (<MDBContainer>
         <CreateTaskForm />
         <MDBRow>
-            <FutureList/>
             <TodayList/>
+            <FutureList/>
+            <CompletedList/>
+
         </MDBRow>
       </MDBContainer>
     );

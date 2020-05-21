@@ -10,7 +10,7 @@ class FutureList extends Component {
         let tasks =tasksStore.futureTasks.map(task => <Task task={task} key={task.title} />);
         return (
             <MDBCol md="4">
-                <h3>Backlog</h3>
+                <h3>Future Deadline</h3>
                 <MDBListGroup>{tasks}</MDBListGroup>
             </MDBCol>
         );

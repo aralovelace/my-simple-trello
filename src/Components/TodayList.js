@@ -9,7 +9,7 @@ class TodayList extends Component {
         let tasks = tasksStore.todayTasks.map(task => <Task task={task} key={task.title} />);
         return (
             <MDBCol md="4">
-                <h3>In Progress</h3>
+                <h3>Today's Deadline</h3>
                 <MDBListGroup>{tasks}</MDBListGroup>
             </MDBCol>
         );

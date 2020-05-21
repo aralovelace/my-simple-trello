@@ -38,6 +38,7 @@ class TasksStore {
         this.todayTasks = this.todayTasks.filter(item => item.id !== taskId);
         this.futureTasks = this.futureTasks.filter(item => item.id !== taskId);
         this.pendingTasks = this.pendingTasks.filter(item => item.id !== taskId);
+        this.doneTasks = this.doneTasks.filter(item => item.id !== taskId);
         this.updateLocalStorage();
     };
 
@@ -46,7 +47,6 @@ class TasksStore {
         this.pendingTasks = this.pendingTasks.filter (item => item.id !== taskId);
         this.todayTasks = this.todayTasks.filter (item => item.id !== taskId);
         this.futureTasks = this.futureTasks.filter(item => item.id !== taskId)
-
         this.doneTasks.push(task);
         this.updateLocalStorage();
 
@@ -57,7 +57,7 @@ class TasksStore {
             todayTasks: this.todayTasks,
             futureTasks: this.futureTasks,
             pendingTasks: this.pendingTasks,
-            done: this.doneTasks,
+            doneTasks: this.doneTasks,
             labels: this.labelOptions,
             idCounter: this.idCounter
         });
@@ -74,15 +74,17 @@ class TasksStore {
             tasks.futureTasks.forEach(task => {
                 if (task.due) task.due = moment (task.due)
             });
-
             tasks.pendingTasks.forEach(task => {
                if (task.due)  task.due = moment (task.due)
+            });
+            tasks.doneTasks.forEach(task => {
+                if (task.due)  task.due = moment (task.due)
             });
 
             this.todayTasks = tasks.todayTasks;
             this.futureTasks = tasks.futureTasks;
             this.pendingTasks = tasks.pendingTasks;
-            this.doneTasks = tasks.done;
+            this.doneTasks = tasks.doneTasks;
             this.labelOptions = tasks.labels;
             this.idCounter = tasks.idCounter;
         }
@@ -92,7 +94,8 @@ class TasksStore {
 
 decorate(TasksStore, {
     todayTasks: observable,
-    futureTasks: observable
+    futureTasks: observable,
+    doneTasks: observable
 });
 
 const tasksStore = new TasksStore();
