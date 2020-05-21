@@ -5,6 +5,8 @@ import CreateTaskForm from "./Components/CreateTaskForm";
 import tasksStore from "./Stores/TasksStore";
 import {MDBContainer, MDBRow} from "mdbreact";
 import CompletedList from "./Components/CompletedList";
+import Header from "./Components/Common/Header";
+
 
 class App extends Component {
 
@@ -15,7 +17,10 @@ class App extends Component {
   
   render() {  
   
-    return (<MDBContainer>
+    return (
+        <MDBContainer fluid>
+            <Header />
+
         <CreateTaskForm />
         <MDBRow>
             <TodayList/>
@@ -24,6 +29,9 @@ class App extends Component {
 
         </MDBRow>
       </MDBContainer>
+
+
+
     );
 }
   
