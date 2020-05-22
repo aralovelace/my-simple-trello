@@ -29,7 +29,7 @@ class Header extends Component {
             <MDBNavbar color="indigo" dark expand="md">
                 <MDBNavbarBrand>
                     <img
-                        src="/logo.png"
+                        src="logo.png"
                         width="40"
                         height="40"
                         className="d-inline-block align-top"
