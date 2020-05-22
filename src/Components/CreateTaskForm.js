@@ -79,7 +79,7 @@ class CreateTaskForm extends Component {
                         value={this.state.labels}
                         onChange={this.labelSelect.bind(this)}
                     />
-                    <Datetime
+                    <Datetime className="mt-3"
                         defaultValue="Optional Due Date"
                         value={this.state.due}
                         onChange={momentObj => {

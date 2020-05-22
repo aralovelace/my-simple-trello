@@ -47,9 +47,9 @@ class Task extends Component {
 
         let dueDate;
       if (this.props.task.due)
-          dueDate = <span>- {this.props.task.due.fromNow()}</span>;
+          dueDate = <span className="light-blue-text"> {this.props.task.due.fromNow()}</span>;
       return (
-          <MDBListGroupItem>
+          <MDBListGroupItem className="border-info">
               <MDBModal
                 modalStyle="danger"
                 className="text-white"
@@ -86,8 +86,8 @@ class Task extends Component {
                                   />
                           </div>
                       </div>
-                      <div className="flex-grow-1 p-3 text-wrap">
-                          <h5 className="mb-1"> {this.props.task.title}</h5>
+                      <div className="flex-grow-1 pb-3 pt-3 text-wrap">
+                          <h5 className="mb-1 deep-purple-text"><strong>{this.props.task.title}</strong></h5>
                       </div>
                   </div>
                   <div>
@@ -98,7 +98,9 @@ class Task extends Component {
                   </div>
               </div>
               <p className="mb-1">{this.props.task.details}</p>
-              <p className="mb-1">{dueDate}</p>
+              <div className="mb-3 mt-3">
+                  Due: {dueDate}
+              </div>
               <div className="flex-row mb-2">{labels}</div>
           </MDBListGroupItem>
       );

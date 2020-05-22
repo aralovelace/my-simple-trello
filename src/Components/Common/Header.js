@@ -6,7 +6,6 @@ import {
     MDBDropdown,
     MDBDropdownItem, MDBDropdownMenu,
     MDBDropdownToggle,
-    MDBFormInline,
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarNav,
@@ -29,19 +28,23 @@ class Header extends Component {
         return (<Router>
             <MDBNavbar color="indigo" dark expand="md">
                 <MDBNavbarBrand>
+                    <img
+                        src="/logo.png"
+                        width="40"
+                        height="40"
+                        className="d-inline-block align-top"
+                        alt="logo"
 
+                    />
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.toggleCollapse} />
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
                     <MDBNavbarNav left>
                         <MDBNavItem active>
-                            <MDBNavLink to="#!">Home</MDBNavLink>
+                            <MDBNavLink to="#!">Board</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
                             <MDBNavLink to="#!">Register</MDBNavLink>
-                        </MDBNavItem>
-                        <MDBNavItem>
-                            <MDBNavLink to="#!">Pricing</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
                             <MDBDropdown>

@@ -9,6 +9,7 @@ class TasksStore {
     pendingTasks = [];
     todayTasks = [];
     futureTasks = [];
+    tomorrowTasks = [];
     doneTasks = [];
 
 
@@ -22,10 +23,19 @@ class TasksStore {
         };
         this.idCounter++;
         this.pendingTasks.push(newTask);
-        if (due && due.isAfter(moment(),"day")) {
+        console.log(due.diff(moment(),"day"));
+        if (due &&
+            (due.diff(moment(), 'day') === 1)
+        ) {
+            let tasks = this.tomorrowTasks;
+            tasks.push(newTask);
+            this.tomorrowTasks = tasks
+
+        } else if (due && due.isAfter(moment(),"day")) {
             let tasks = this.futureTasks;
             tasks.push(newTask);
             this.futureTasks = tasks
+
         } else {
             let tasks = this.todayTasks;
             tasks.push(newTask);
@@ -36,6 +46,7 @@ class TasksStore {
 
     deleteTask = taskId => {
         this.todayTasks = this.todayTasks.filter(item => item.id !== taskId);
+        this.tomorrowTasks = this.tomorrowTasks.filter(item => item.id !== taskId);
         this.futureTasks = this.futureTasks.filter(item => item.id !== taskId);
         this.pendingTasks = this.pendingTasks.filter(item => item.id !== taskId);
         this.doneTasks = this.doneTasks.filter(item => item.id !== taskId);
@@ -45,6 +56,7 @@ class TasksStore {
     checkTask = taskId => {
         let task = this.pendingTasks.find(item => item.id === taskId);
         this.pendingTasks = this.pendingTasks.filter (item => item.id !== taskId);
+        this.tomorrowTasks = this.tomorrowTasks.filter(item => item.id !== taskId);
         this.todayTasks = this.todayTasks.filter (item => item.id !== taskId);
         this.futureTasks = this.futureTasks.filter(item => item.id !== taskId)
         this.doneTasks.push(task);
@@ -55,6 +67,7 @@ class TasksStore {
     updateLocalStorage = () => {
         let tasks = JSON.stringify({
             todayTasks: this.todayTasks,
+            tomorrowTasks: this.tomorrowTasks,
             futureTasks: this.futureTasks,
             pendingTasks: this.pendingTasks,
             doneTasks: this.doneTasks,
@@ -71,6 +84,9 @@ class TasksStore {
             tasks.todayTasks.forEach(task => {
                 if (task.due) task.due = moment(task.due);
             });
+            tasks.tomorrowTasks.forEach(task => {
+                if (task.due) task.due = moment(task.due);
+            });
             tasks.futureTasks.forEach(task => {
                 if (task.due) task.due = moment (task.due)
             });
@@ -82,6 +98,7 @@ class TasksStore {
             });
 
             this.todayTasks = tasks.todayTasks;
+            this.tomorrowTasks = tasks.tomorrowTasks;
             this.futureTasks = tasks.futureTasks;
             this.pendingTasks = tasks.pendingTasks;
             this.doneTasks = tasks.doneTasks;
@@ -95,7 +112,8 @@ class TasksStore {
 decorate(TasksStore, {
     todayTasks: observable,
     futureTasks: observable,
-    doneTasks: observable
+    doneTasks: observable,
+    tomorrowTasks: observable
 });
 
 const tasksStore = new TasksStore();
