@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Task from "./Task";
 import tasksStore from "../Stores/TasksStore";
 import { observer} from "mobx-react";
-import { MDBContainer, MDBListGroup} from "mdbreact";
+import {  MDBListGroup} from "mdbreact";
 
 
 class FutureList extends Component {

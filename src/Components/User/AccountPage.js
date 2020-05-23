@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {MDBContainer, MDBRow} from "mdbreact";
+import {MDBContainer} from "mdbreact";
 
 
 class AccountPage extends Component {

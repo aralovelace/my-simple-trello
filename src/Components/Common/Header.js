@@ -13,7 +13,6 @@ import {
     MDBNavItem,
     MDBNavLink
 } from "mdbreact";
-import { BrowserRouter as Router  } from 'react-router-dom';
 import * as ROUTES from '../Constants/routes'
 class Header extends Component {
 

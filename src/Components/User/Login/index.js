@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {MDBBtn, MDBCol, MDBContainer, MDBInput, MDBModalBody, MDBRow} from "mdbreact";
+import {MDBBtn, MDBCol, MDBContainer, MDBInput, MDBRow} from "mdbreact";
 
 class LoginPage extends Component {
 

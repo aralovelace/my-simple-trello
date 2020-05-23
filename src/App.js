@@ -11,10 +11,8 @@ import AccountPage from "./Components/User/AccountPage";
 
 class App extends Component {
 
-
-  render() {  
-  
-    return (
+    render() {
+        return (
         <MDBContainer fluid>
         <Router>
             <Header />
