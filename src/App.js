@@ -1,39 +1,30 @@
 import React, { Component } from "react";
-import TodayList from "./Components/TodayList";
-import FutureList from "./Components/FutureList";
-import CreateTaskForm from "./Components/CreateTaskForm";
-import tasksStore from "./Stores/TasksStore";
-import {MDBCol, MDBContainer, MDBRow} from "mdbreact";
-import CompletedList from "./Components/CompletedList";
+import { BrowserRouter as Router, Route  } from 'react-router-dom';
+import RegisterPage from "./Components/User/Register";
+import * as ROUTES from './Components/Constants/routes'
+import Dashboard from "./Components/Dashboard";
+import {MDBContainer} from "mdbreact";
 import Header from "./Components/Common/Header";
 import Footer from "./Components/Common/Footer";
-import TomorrowList from "./Components/Common/TomorrowList";
-
+import LoginPage from "./Components/User/Login";
+import AccountPage from "./Components/User/AccountPage";
 
 class App extends Component {
 
-  componentDidMount() {
-    tasksStore.retrieveFromLocalStorage();
-  }
 
-  
   render() {  
   
     return (
         <MDBContainer fluid>
+        <Router>
             <Header />
-            <CreateTaskForm />
-            <MDBRow>
-                <TodayList/>
-                <MDBCol md="4">
-                    <TomorrowList />
-                    <FutureList/>
-                </MDBCol>
-                <CompletedList/>
-            </MDBRow>
+            <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+            <Route path={ROUTES.REGISTER} component={RegisterPage} />
+            <Route path={ROUTES.LOGIN} component={LoginPage} />
+            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+        </Router>
             <Footer />
-      </MDBContainer>
-
+        </MDBContainer>
 
 
     );

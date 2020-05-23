@@ -49,7 +49,7 @@ class Task extends Component {
       if (this.props.task.due)
           dueDate = <span className="light-blue-text"> {this.props.task.due.fromNow()}</span>;
       return (
-          <MDBListGroupItem className="mdb-color lighten-5" color="primary-color-dark" >
+          <MDBListGroupItem className="rgba(3, 169, 244, 0.1) rgba-blue-slight" color="primary-color-dark" >
               <MDBModal
                 modalStyle="danger"
                 className="text-white"
@@ -67,7 +67,7 @@ class Task extends Component {
                   Are you sure?
                   </MDBModalHeader>
                   <MDBModalBody className="text-center">
-                      <MDBIcon icon="times" size="4x" pull className="animated data" />
+                      delete task - <strong>"{this.props.task.title}"</strong>
                   </MDBModalBody>
                   <MDBModalFooter className="justify-content-center">
                       <MDBBtn color="danger" onClick={this.deleteTask.bind(this)}>Yes</MDBBtn>
@@ -87,7 +87,7 @@ class Task extends Component {
                           </div>
                       </div>
                       <div className="flex-grow-1 pb-3 pt-3 text-wrap">
-                          <h5 className="mb-1 deep-purple-text"><strong>{this.props.task.title}</strong></h5>
+                          <h5 className="mb-1 blue-text"><strong>{this.props.task.title}</strong></h5>
                       </div>
                   </div>
                   <div>

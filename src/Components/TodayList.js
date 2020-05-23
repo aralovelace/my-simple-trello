@@ -8,8 +8,8 @@ class TodayList extends Component {
     render() {
         let tasks = tasksStore.todayTasks.map(task => <Task task={task} key={task.title} />);
         return (
-            <MDBCol md="4">
-                <h3>Today's Deadline</h3>
+            <MDBCol md="4" className="mb-5">
+                <h3 className="red-text">Today's Deadline</h3>
                 <MDBListGroup>{tasks}</MDBListGroup>
             </MDBCol>
         );
