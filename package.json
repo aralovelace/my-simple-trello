@@ -1,9 +1,10 @@
 {
   "name": "my-simple-trello",
-  "homepage": "https://aralovelace.github.io/my-simple-trello/",
+  "homepage": "https://aralovelace.github.io/my-simple-trello",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "gh-pages": "^2.2.0",
     "levenary": "^1.1.1",
     "mdbreact": "^4.26.1",
@@ -13,6 +14,7 @@
     "react": "^16.9.0",
     "react-datetime": "^2.16.3",
     "react-dom": "^16.9.0",
+    "react-router": "^5.2.0",
     "react-scripts": "3.1.1",
     "react-select": "^3.1.0"
   },
