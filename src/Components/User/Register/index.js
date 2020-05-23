@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import {observer} from "mobx-react";
 import {MDBBtn, MDBCol, MDBContainer, MDBInput, MDBRow} from "mdbreact";
 
-
 class RegisterPage extends Component {
 
     state = {
@@ -13,8 +12,20 @@ class RegisterPage extends Component {
     }
 
     submitHandler = event => {
+
+        const { fname, email, password } = this.state;
+        this.props.firebase
+            .doCreateUserWithEmailAndPassword(email, password)
+            .then(authUser => {
+                this.setState({  });
+            })
+            .catch(error => {
+                this.setState({ error });
+            });
+
         event.preventDefault();
         event.target.className += " was-validated";
+
     };
 
     changeHandler = event => {
@@ -22,11 +33,12 @@ class RegisterPage extends Component {
     };
 
     render() {
+
         return (
             <MDBContainer className="mt-5">
                 <MDBRow>
                     <MDBCol md="6">
-                        <form>
+                        <form onSubmit={this.onSubmit}>
                             <p className="h3 text-center mb-4">Register</p>
                             <div className="grey-text">
                                 <MDBInput

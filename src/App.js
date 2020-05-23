@@ -8,7 +8,7 @@ import Header from "./Components/Common/Header";
 import Footer from "./Components/Common/Footer";
 import LoginPage from "./Components/User/Login";
 import AccountPage from "./Components/User/AccountPage";
-
+import  { FirebaseContext } from './Components/Firebase';
 class App extends Component {
 
     render() {
@@ -22,7 +22,14 @@ class App extends Component {
             <Route path={ROUTES.ACCOUNT} component={AccountPage} />
         </Router>
             <Footer />
+
+            <FirebaseContext.Consumer>
+                {firebase => {
+                    return <div>I've access to Firebase and render something.</div>;
+                }}
+            </FirebaseContext.Consumer>
         </MDBContainer>
+
 
 
     );
