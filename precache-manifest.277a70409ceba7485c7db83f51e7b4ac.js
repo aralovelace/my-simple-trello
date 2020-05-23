@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e5291e12d3482c5884c05e6723d2ee72",
+    "revision": "cd7a54e92ab57b42918cc74fdfad2a5a",
     "url": "/my-simple-trello/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/my-simple-trello/static/css/2.c0ce9c96.chunk.css"
   },
   {
-    "revision": "aeb613c9ede912aa508d",
+    "revision": "21aeabf302bafed71737",
     "url": "/my-simple-trello/static/css/main.e0b9f7b8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/my-simple-trello/static/js/2.3a4438bf.chunk.js"
   },
   {
-    "revision": "aeb613c9ede912aa508d",
-    "url": "/my-simple-trello/static/js/main.e5b40a4b.chunk.js"
+    "revision": "21aeabf302bafed71737",
+    "url": "/my-simple-trello/static/js/main.a8bf60ff.chunk.js"
   },
   {
     "revision": "207856de8e59c0fc6041",
