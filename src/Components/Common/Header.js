@@ -3,9 +3,6 @@ import React, { Component } from "react";
 import {observer} from "mobx-react";
 import {
     MDBCollapse,
-    MDBDropdown,
-    MDBDropdownItem, MDBDropdownMenu,
-    MDBDropdownToggle,
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarNav,
@@ -47,16 +44,10 @@ class Header extends Component {
                             <MDBNavLink to={ROUTES.REGISTER}>Register</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <MDBDropdown>
-                                <MDBDropdownToggle nav caret>
-                                    <span className={ROUTES.ACCOUNT}>Account</span>
-                                </MDBDropdownToggle>
-                                <MDBDropdownMenu>
-                                    <MDBDropdownItem href={ROUTES.LOGIN}>Login</MDBDropdownItem>
-                                    <MDBDropdownItem href={ROUTES.ACCOUNT}>Edit Profile</MDBDropdownItem>
-                                    <MDBDropdownItem href="#!">Logout</MDBDropdownItem>
-                                </MDBDropdownMenu>
-                            </MDBDropdown>
+                            <MDBNavLink to={ROUTES.LOGIN}>Login</MDBNavLink>
+                        </MDBNavItem>
+                        <MDBNavItem>
+                            <MDBNavLink to={ROUTES.ACCOUNT}>Account</MDBNavLink>
                         </MDBNavItem>
                     </MDBNavbarNav>
                     <MDBNavbarNav right>

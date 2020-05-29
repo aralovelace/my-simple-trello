@@ -48,7 +48,7 @@ class CreateTaskForm extends Component {
       });
 
     return (
-        <MDBRow className="mt-3 mb-3">
+        <MDBRow className="mt-3 mb-3 ml-2">
             <MDBBtn outline color="primary" onClick={this.toggleModal.bind(this)}>
                 New Task
             </MDBBtn>

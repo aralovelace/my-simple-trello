@@ -13,7 +13,7 @@ class App extends Component {
 
     render() {
         return (
-        <MDBContainer fluid>
+        <div>
         <Router>
             <Header />
             <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
@@ -30,6 +30,7 @@ class App extends Component {
             </FirebaseContext.Consumer>
         </MDBContainer>
 
+        </div>
 
 
     );
