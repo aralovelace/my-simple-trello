@@ -47,6 +47,10 @@ class Header extends Component {
                             <MDBNavLink to={ROUTES.LOGIN}>Login</MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
+                            <MDBNavLink to={ROUTES.SIGN_UP}>Sign Up</MDBNavLink>
+                        </MDBNavItem>
+
+                        <MDBNavItem>
                             <MDBNavLink to={ROUTES.ACCOUNT}>Account</MDBNavLink>
                         </MDBNavItem>
                     </MDBNavbarNav>

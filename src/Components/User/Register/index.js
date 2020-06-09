@@ -13,7 +13,7 @@ class RegisterPage extends Component {
 
     submitHandler = event => {
 
-        const { fname, email, password } = this.state;
+        const {  email, password } = this.state;
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, password)
             .then(authUser => {
