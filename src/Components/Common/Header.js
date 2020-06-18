@@ -35,7 +35,7 @@ class Header extends Component {
                     />
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.toggleCollapse} />
-                <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+                <MDBCollapse id="navbarCollaNavLinkpse3" isOpen={this.state.isOpen} navbar>
                     <MDBNavbarNav left>
                         <MDBNavItem active>
                             <MDBNavLink to={ROUTES.DASHBOARD}>Board</MDBNavLink>
